@@ -32,7 +32,8 @@ const AddAProduct = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                alert('Product Added Successfully!');
+                history.push('/explore')
             })
         e.preventDefault();
     }

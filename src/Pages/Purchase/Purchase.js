@@ -20,7 +20,7 @@ const Purchase = () => {
     const [product, setProduct] = useState({});
     const { allContexts } = useAuth();
     const { user } = allContexts;
-    const initialInfo = { userName: user.displayName, email: user.email, phone: '', address: '' }
+    const initialInfo = { userName: user.displayName, email: user.email, phone: '', address: '', status: 'pending' }
     const [purchaseInfo, setPurchaseInfo] = useState(initialInfo);
     const { productId } = useParams();
     const history = useHistory();

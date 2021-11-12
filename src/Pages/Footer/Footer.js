@@ -9,7 +9,7 @@ const Footer = () => {
         <footer>
             <Box
                 px={{ xs: 3, sm: 10 }}
-                py={{ xs: 5, sm: 10 }}
+                py={{ xs: 5, sm: 8 }}
                 sx={{ bgcolor: 'black', opacity: '75%', mt: 5 }}
                 color="white"
             >
@@ -18,7 +18,7 @@ const Footer = () => {
                         <Grid item xs={12} sm={4}>
                             <Box borderBottom={1}>Help</Box>
                             <Box>
-                                <Link sx={{ textDecoration: 'none' }} href="/" color="inherit">
+                                <Link sx={{ textDecoration: 'none' }} color="inherit">
                                     Contact
                                 </Link>
                             </Box>
@@ -36,12 +36,12 @@ const Footer = () => {
                         <Grid item xs={12} sm={4}>
                             <Box borderBottom={1}>Account</Box>
                             <Box>
-                                <Link sx={{ textDecoration: 'none' }} href="/" color="inherit">
+                                <Link sx={{ textDecoration: 'none' }} href="/login" color="inherit">
                                     Login
                                 </Link>
                             </Box>
                             <Box>
-                                <Link sx={{ textDecoration: 'none' }} href="/" color="inherit">
+                                <Link sx={{ textDecoration: 'none' }} href="/register" color="inherit">
                                     Register
                                 </Link>
                             </Box>
@@ -66,7 +66,7 @@ const Footer = () => {
                         </Grid>
                     </Grid>
                     <Box textAlign="center" pt={{ xs: 5, sm: 10 }} pb={{ xs: 5, sm: 0 }}>
-                        All Right Reserve &reg; {new Date().getFullYear()}
+                        © 2021 Copyright: Alpha Bike's . All Right Reserved
                     </Box>
                 </Container>
             </Box>

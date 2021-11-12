@@ -31,6 +31,7 @@ import Pay from '../Pay/Pay';
 import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
 import AddAProduct from '../AddAProduct/AddAProduct';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
+import ManageProducts from '../ManageProducts/ManageProducts';
 
 const drawerWidth = 190;
 
@@ -57,14 +58,15 @@ function Dashboard(props) {
             <List>
                 <Link style={{ textDecoration: 'none', color: 'white' }} to="/explore"><Button variant="contained" sx={{ mb: 2, width: '90%' }}>Explore</Button></Link>
                 <Link style={{ textDecoration: 'none', color: 'white' }} to={`${url}`}><Button variant="contained" sx={{ width: '90%' }}>Dashboard</Button></Link>
-                <Link style={{ textDecoration: 'none', color: 'white' }} to={`${url}/pay`}><Button variant="contained" sx={{ my: 2, width: '90%' }}>Payment</Button></Link>
-                <Link style={{ textDecoration: 'none', color: 'white' }} to={`${url}/myOrders`}><Button variant="contained" sx={{ width: '90%' }}>My Orders</Button></Link>
+                <Link style={{ textDecoration: 'none', color: 'white' }} to={`${url}/pay`}><Button variant="contained" sx={{ mt: 2, width: '90%' }}>Payment</Button></Link>
+                {/* <Link style={{ textDecoration: 'none', color: 'white' }} to={`${url}/myOrders`}><Button variant="contained" sx={{ width: '90%' }}>My Orders</Button></Link> */}
                 <Link style={{ textDecoration: 'none', color: 'white' }} to={`${url}/review`}><Button variant="contained" sx={{ my: 2, width: '90%' }}>Review</Button></Link>
                 {
                     admin && <Box>
                         <Link style={{ textDecoration: 'none', color: 'white' }} to={`${url}/manageAllOrders`}><Button variant="contained" sx={{ width: '90%' }}>Manage All Orders</Button></Link>
                         <Link style={{ textDecoration: 'none', color: 'white' }} to={`${url}/addProduct`}><Button variant="contained" sx={{ my: 2, width: '90%' }}>Add Product</Button></Link>
                         <Link style={{ textDecoration: 'none', color: 'white' }} to={`${url}/makeAdmin`}><Button variant="contained" sx={{ width: '90%' }}>Make Admin</Button></Link>
+                        <Link style={{ textDecoration: 'none', color: 'white' }} to={`${url}/manageProducts`}><Button variant="contained" sx={{ mt: 2, width: '90%' }}>Manage Products</Button></Link>
                     </Box>
                 }
                 <Button style={{ color: 'white' }} onClick={logOut} variant="contained" sx={{ width: '90%', my: 2 }}>Log out</Button>
@@ -143,9 +145,9 @@ function Dashboard(props) {
                     <Route exact path={`${path}/pay`}>
                         <Pay></Pay>
                     </Route>
-                    <Route path={`${path}/myOrders`}>
+                    {/* <Route path={`${path}/myOrders`}>
                         <MyOrders></MyOrders>
-                    </Route>
+                    </Route> */}
                     <Route path={`${path}/review`}>
                         <Review></Review>
                     </Route>
@@ -157,6 +159,9 @@ function Dashboard(props) {
                     </Route>
                     <Route path={`${path}/makeAdmin`}>
                         <MakeAdmin></MakeAdmin>
+                    </Route>
+                    <Route path={`${path}/manageProducts`}>
+                        <ManageProducts></ManageProducts>
                     </Route>
                 </Switch>
             </Box>
