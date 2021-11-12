@@ -4,15 +4,14 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import Navigation from './Pages/Navigation/Navigation';
 import Home from './Pages/Home/Home/Home';
 import Explore from './Pages/Explore/Explore';
-import Footer from './Pages/Footer/Footer';
 import Purchase from './Pages/Purchase/Purchase';
 import Register from './Pages/Login/Register/Register';
 import AuthProvider from './Pages/contexts/AuthProvider/AuthProvider';
 import Login from './Pages/Login/Login/Login';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
+import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 
 
 function App() {
@@ -20,7 +19,6 @@ function App() {
     <div className="App">
       <AuthProvider>
         <Router>
-          <Navigation></Navigation>
           <Switch>
             <Route exact path="/">
               <Home></Home>
@@ -40,9 +38,9 @@ function App() {
             <Route path="/login">
               <Login></Login>
             </Route>
-            <Route path="/products/:productId">
+            <PrivateRoute path="/products/:productId">
               <Purchase></Purchase>
-            </Route>
+            </PrivateRoute>
           </Switch>
         </Router>
       </AuthProvider>

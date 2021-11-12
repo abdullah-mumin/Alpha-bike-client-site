@@ -14,7 +14,7 @@ const Navigation = () => {
     const { user, logOut } = allContexts;
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static">
+            <AppBar position="static" sx={{ bgcolor: 'blue', opacity: '50%' }} >
                 <Toolbar>
                     <IconButton
                         size="large"

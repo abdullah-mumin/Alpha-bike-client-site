@@ -7,7 +7,7 @@ import award3 from '../../../images/Award/award-3.png';
 
 const Award = () => {
     return (
-        <Container>
+        <Container sx={{ mt: 4 }}>
             <Typography sx={{ fontWeight: 600, m: 2 }} gutterBottom variant="h4" component="div">
                 OUR AWARDS
             </Typography>

@@ -2,6 +2,7 @@ import { Container, Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
 import Footer from '../../Footer/Footer';
+import Navigation from '../../Navigation/Navigation';
 import Award from '../Award/Award';
 import Banner from '../Banner/Banner';
 import Product from '../Product/Product';
@@ -19,6 +20,7 @@ const Home = () => {
     }, [])
     return (
         <div>
+            <Navigation></Navigation>
             <Banner></Banner>
             <div>
                 <Container>
@@ -37,7 +39,7 @@ const Home = () => {
                     </Box>
                 </Container>
             </div>
-            {/* <ReviewsHome></ReviewsHome> */}
+            <ReviewsHome></ReviewsHome>
             <Award></Award>
             <Footer></Footer>
         </div>

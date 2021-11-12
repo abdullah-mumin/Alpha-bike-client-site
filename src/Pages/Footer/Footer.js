@@ -1,4 +1,4 @@
-import { Container, Grid, Link } from '@mui/material';
+import { Container, Grid, Link, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
 
@@ -10,31 +10,35 @@ const Footer = () => {
             <Box
                 px={{ xs: 3, sm: 10 }}
                 py={{ xs: 5, sm: 8 }}
-                sx={{ bgcolor: 'black', opacity: '75%', mt: 5 }}
+                sx={{ bgcolor: 'blue', opacity: '50%', mt: 5 }}
                 color="white"
             >
                 <Container maxWidth="lg">
                     <Grid container spacing={5}>
-                        <Grid item xs={12} sm={4}>
-                            <Box borderBottom={1}>Help</Box>
+                        <Grid item xs={12} sm={3}>
+                            <Typography sx={{ fontWeight: '500', fontSize: 35 }}>ALPHA BIKE'S</Typography>
+                            <Typography sx={{ fontWeight: '500', fontSize: 15 }}>GET YOUR DERAM BIKE</Typography>
+                        </Grid>
+                        <Grid item xs={12} sm={3}>
+                            <Box sx={{ fontWeight: '500', fontSize: 25 }} borderBottom={1}>Help</Box>
                             <Box>
                                 <Link sx={{ textDecoration: 'none' }} color="inherit">
                                     Contact
                                 </Link>
                             </Box>
                             <Box>
-                                <Link sx={{ textDecoration: 'none' }} href="/" color="inherit">
+                                <Link sx={{ textDecoration: 'none' }} color="inherit">
                                     Support
                                 </Link>
                             </Box>
                             <Box>
-                                <Link sx={{ textDecoration: 'none' }} href="/" color="inherit">
+                                <Link sx={{ textDecoration: 'none' }} color="inherit">
                                     Privacy
                                 </Link>
                             </Box>
                         </Grid>
-                        <Grid item xs={12} sm={4}>
-                            <Box borderBottom={1}>Account</Box>
+                        <Grid item xs={12} sm={3}>
+                            <Box sx={{ fontWeight: '500', fontSize: 25 }} borderBottom={1}>Account</Box>
                             <Box>
                                 <Link sx={{ textDecoration: 'none' }} href="/login" color="inherit">
                                     Login
@@ -46,21 +50,21 @@ const Footer = () => {
                                 </Link>
                             </Box>
                         </Grid>
-                        <Grid item xs={12} sm={4}>
-                            <Box borderBottom={1}>Messages</Box>
+                        <Grid item xs={12} sm={3}>
+                            <Box sx={{ fontWeight: '500', fontSize: 25 }} borderBottom={1}>Follow Us</Box>
                             <Box>
                                 <Link sx={{ textDecoration: 'none' }} href="/" color="inherit">
-                                    Backup
+                                    Facebook
                                 </Link>
                             </Box>
                             <Box>
                                 <Link sx={{ textDecoration: 'none' }} href="/" color="inherit">
-                                    History
+                                    Twitter
                                 </Link>
                             </Box>
                             <Box>
                                 <Link sx={{ textDecoration: 'none' }} href="/" color="inherit">
-                                    Roll
+                                    Youtube
                                 </Link>
                             </Box>
                         </Grid>
