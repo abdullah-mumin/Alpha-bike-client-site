@@ -23,7 +23,7 @@ const AddAProduct = () => {
         const product = {
             ...productInfo
         };
-        fetch('http://localhost:5000/products', {
+        fetch('https://lit-citadel-03300.herokuapp.com/products', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

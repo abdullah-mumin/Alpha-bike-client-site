@@ -25,7 +25,7 @@ const Review = () => {
         const review = {
             ...reviewInfo,
         };
-        fetch('http://localhost:5000/review', {
+        fetch('https://lit-citadel-03300.herokuapp.com/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

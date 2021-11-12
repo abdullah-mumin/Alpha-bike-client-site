@@ -6,12 +6,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
 import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -25,7 +20,6 @@ import {
 } from "react-router-dom";
 import useAuth from '../../hooks/useAuth';
 import DashboardHome from '../DashboardHome/DashboardHome';
-import MyOrders from '../MyOrders/MyOrders';
 import Review from '../Review/Review';
 import Pay from '../Pay/Pay';
 import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
@@ -68,7 +62,7 @@ function Dashboard(props) {
                         <Link style={{ textDecoration: 'none', color: 'white' }} to={`${url}/manageProducts`}><Button variant="contained" sx={{ mt: 2, width: '90%' }}>Manage Products</Button></Link>
                     </Box>
                 }
-                <Button style={{ color: 'white' }} onClick={logOut} variant="contained" sx={{ width: '90%', my: 2 }}>Log out</Button>
+                <Link to="/home" style={{ textDecoration: 'none' }}><Button style={{ color: 'white' }} onClick={logOut} variant="contained" sx={{ width: '90%', my: 2 }}>Log out</Button></Link>
             </List>
         </div>
     );

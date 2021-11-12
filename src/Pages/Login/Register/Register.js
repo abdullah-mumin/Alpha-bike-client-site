@@ -3,11 +3,11 @@ import React from 'react';
 import Typography from '@mui/material/Typography';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
-import CircularProgress from '@mui/material/CircularProgress';
 import { useState } from 'react';
-import { useHistory, useLocation } from 'react-router';
+import { useHistory } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+import register from '../../../images/security/register.png';
 
 const Register = () => {
     const [loginData, setLoginData] = useState({});
@@ -83,7 +83,7 @@ const Register = () => {
                     </Alert>}
                 </Grid>
                 <Grid item xs={4} md={6}>
-                    <img style={{ width: '500px' }} src="" alt="" />
+                    <img style={{ width: '450px' }} src={register} alt="" />
                 </Grid>
             </Grid>
         </Container>

@@ -12,7 +12,7 @@ const ManageProducts = () => {
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://lit-citadel-03300.herokuapp.com/products')
             .then(res => res.json())
             .then(data => {
                 setOrders(data);
@@ -22,7 +22,7 @@ const ManageProducts = () => {
     const handleDelete = (id) => {
         const confirmation = window.confirm('Are you sure you want to delete!');
         if (confirmation) {
-            fetch(`http://localhost:5000/products/${id}`, {
+            fetch(`https://lit-citadel-03300.herokuapp.com/products/${id}`, {
                 method: 'DELETE',
             })
                 .then(res => res.json())

@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useHistory, useLocation } from 'react-router';
 import useAuth from '../../hooks/useAuth';
+import login from '../../../images/security/login.png';
 
 const Login = () => {
     const [loginData, setLoginData] = useState({});
@@ -57,7 +58,7 @@ const Login = () => {
                     </form>
                 </Grid>
                 <Grid item xs={4} md={6}>
-                    <img style={{ width: '500px' }} src="" alt="" />
+                    <img style={{ width: '450px' }} src={login} alt="" />
                 </Grid>
             </Grid>
         </Container>

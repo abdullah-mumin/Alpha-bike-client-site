@@ -17,7 +17,7 @@ const ManageAllOrders = () => {
     const [reload, setReload] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:5000/manageOrders')
+        fetch('https://lit-citadel-03300.herokuapp.com/manageOrders')
             .then(res => res.json())
             .then(data => {
                 setOrders(data);
@@ -27,7 +27,7 @@ const ManageAllOrders = () => {
     const handleCancle = (id) => {
         const confirmation = window.confirm('Are you sure you want to delete!');
         if (confirmation) {
-            fetch(`http://localhost:5000/delete/${id}`, {
+            fetch(`https://lit-citadel-03300.herokuapp.com/delete/${id}`, {
                 method: 'DELETE',
             })
                 .then(res => res.json())
@@ -46,7 +46,7 @@ const ManageAllOrders = () => {
     const handleConfirm = (id) => {
         const confirmation = window.confirm('Are you sure you want to Confirm!');
         if (confirmation) {
-            fetch(`http://localhost:5000/confirmation/${id}`, {
+            fetch(`https://lit-citadel-03300.herokuapp.com/confirmation/${id}`, {
                 method: 'PUT',
             })
                 .then(res => res.json())
