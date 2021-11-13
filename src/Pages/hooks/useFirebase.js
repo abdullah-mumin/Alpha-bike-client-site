@@ -62,10 +62,10 @@ const useFirebase = () => {
             } else {
                 setUser({});
             }
-            setIsLoading(false)
+            setIsLoading(false);
         });
         return () => unsubscribe;
-    }, []);
+    }, [auth]);
 
     const logOut = () => {
         signOut(auth).then(() => {
@@ -78,16 +78,15 @@ const useFirebase = () => {
     };
 
     useEffect(() => {
+        // @ts-ignore
         fetch(`https://lit-citadel-03300.herokuapp.com/users/${user?.email}`)
             .then(res => res.json())
             .then(data => {
-                if (data) {
-                    setAdmin(data.admin);
-                    // setIsLoading(false);
-                }
-                else { }
+                setAdmin(data.admin);
+
             })
-    }, [user?.email]);
+        // @ts-ignore
+    }, [user.email]);
 
     const saveUser = (email, displayName) => {
         const user = { email, displayName };

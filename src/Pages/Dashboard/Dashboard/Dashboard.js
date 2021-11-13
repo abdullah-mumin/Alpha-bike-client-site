@@ -41,7 +41,6 @@ function Dashboard(props) {
         setMobileOpen(!mobileOpen);
     };
 
-    // console.log(admin);
 
     let { path, url } = useRouteMatch();
 
