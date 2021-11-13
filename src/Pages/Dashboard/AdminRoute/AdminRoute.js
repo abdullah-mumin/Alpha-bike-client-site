@@ -8,6 +8,7 @@ const AdminRoute = ({ children, ...rest }) => {
     const { allContexts } = useAuth();
     const { user, isLoading, admin } = allContexts;
     if (isLoading) { return <CircularProgress /> }
+    console.log(user.email, admin);
     return (
         <Route
             {...rest}

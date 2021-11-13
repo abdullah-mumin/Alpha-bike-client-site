@@ -13,6 +13,7 @@ const MyOrders = () => {
     const { allContexts } = useAuth();
     const { user } = allContexts;
     const [orders, setOrders] = useState([]);
+    const [reload, setReload] = useState(false);
 
     useEffect(() => {
         const url = `https://lit-citadel-03300.herokuapp.com/purchases?email=${user.email}`;
@@ -20,8 +21,9 @@ const MyOrders = () => {
             .then(res => res.json())
             .then(data => {
                 setOrders(data);
+                setReload(!reload);
             })
-    }, []);
+    }, [reload]);
 
     const handleDelete = (id) => {
         const confirmation = window.confirm('Are you sure you want to delete!');

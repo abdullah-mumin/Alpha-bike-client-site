@@ -76,7 +76,6 @@ const Register = () => {
                             <Button>Already Register? Please Login</Button>
                         </NavLink>
                     </form>}
-                    {/* {isLoading && <CircularProgress />} */}
                     {user?.email && <Alert severity="success">
                         <AlertTitle>Success</AlertTitle>
                         <strong>Successfully Registered!</strong>

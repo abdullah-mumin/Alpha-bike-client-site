@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import initializeAuthentation from '../Login/Firebase/firebase.init';
-import { getAuth, createUserWithEmailAndPassword, signOut, updateProfile, onAuthStateChanged, signInWithEmailAndPassword, getIdToken } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signOut, updateProfile, onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
 import { useHistory } from 'react-router-dom';
 
 
@@ -12,7 +12,7 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [authError, setAuthError] = useState('');
-    const [admin, setAdmin] = useState(false);
+    const [admin, setAdmin] = useState(true);
 
     const auth = getAuth();
 
@@ -59,10 +59,6 @@ const useFirebase = () => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user);
-                // getIdToken(user)
-                //     .then(idToken => {
-                //         setToken(idToken);
-                //     })
             } else {
                 setUser({});
             }
@@ -85,7 +81,11 @@ const useFirebase = () => {
         fetch(`https://lit-citadel-03300.herokuapp.com/users/${user?.email}`)
             .then(res => res.json())
             .then(data => {
-                setAdmin(data.admin);
+                if (data) {
+                    setAdmin(data.admin);
+                    // setIsLoading(false);
+                }
+                else { }
             })
     }, [user?.email]);
 

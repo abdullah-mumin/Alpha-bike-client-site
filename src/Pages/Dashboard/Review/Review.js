@@ -17,7 +17,6 @@ const Review = () => {
         const value = e.target.value;
         const newReview = { ...reviewInfo };
         newReview[field] = value;
-        // console.log(field, value);
         setReviewInfo(newReview);
     }
 
@@ -72,8 +71,6 @@ const Review = () => {
                     sx={{ width: '75%' }}
                     id="outlined-required"
                     label="Rating out of 5"
-                    type="text"
-                    // InputLabelProps={{ shrink: true }}
                     name="rating"
                     inputProps={{ min: 0, max: 5 }}
                     onBlur={handleOnBlur}

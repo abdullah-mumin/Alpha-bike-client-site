@@ -13,6 +13,7 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import useAuth from '../hooks/useAuth';
 import Footer from '../Footer/Footer';
+import Navigation from '../Navigation/Navigation';
 
 
 
@@ -33,7 +34,6 @@ const Purchase = () => {
                 setProduct(data);
             })
     }, []);
-    // console.log(user.displayName);
 
     const handleOnBlur = e => {
         const field = e.target.name;
@@ -68,79 +68,82 @@ const Purchase = () => {
 
 
     return (
-        <Container>
-            <Box sx={{ flexGrow: 1, mt: 4 }}>
-                <Grid container spacing={2} >
-                    <Grid container item xs={12} md={6} alignItems="center" direction="column" justifyContent="center">
-                        <Grid>
-                            <Card sx={{ maxWidth: 345 }}>
-                                <CardActionArea>
-                                    <CardMedia
-                                        component="img"
-                                        style={{ width: 'auto', height: '200px', margin: '0 auto' }}
-                                        image={product?.img}
-                                        alt="bike"
+        <div>
+            <Navigation />
+            <Container>
+                <Box sx={{ flexGrow: 1, mt: 4 }}>
+                    <Grid container spacing={2} >
+                        <Grid container item xs={12} md={6} alignItems="center" direction="column" justifyContent="center">
+                            <Grid>
+                                <Card sx={{ maxWidth: 345 }}>
+                                    <CardActionArea>
+                                        <CardMedia
+                                            component="img"
+                                            style={{ width: 'auto', height: '200px', margin: '0 auto' }}
+                                            image={product?.img}
+                                            alt="bike"
+                                        />
+                                        <CardContent>
+                                            <Typography gutterBottom variant="h5" component="div">
+                                                {product?.name}
+                                            </Typography>
+                                            <Typography gutterBottom variant="h6" component="div">
+                                                Price: ${product?.price}
+                                            </Typography>
+                                            <Typography variant="body2" color="text.secondary">
+                                                {product?.desc}
+                                            </Typography>
+                                        </CardContent>
+                                    </CardActionArea>
+                                </Card>
+                            </Grid>
+                        </Grid>
+                        <Grid item xs={4} md={6}>
+                            <Container>
+                                <form onSubmit={handlePurchaseSubmit}>
+                                    <TextField
+                                        required
+                                        sx={{ width: '75%', mt: 3 }}
+                                        id="outlined-required"
+                                        label="Name"
+                                        name="displayName"
+                                        defaultValue={user?.displayName}
+                                        onBlur={handleOnBlur}
                                     />
-                                    <CardContent>
-                                        <Typography gutterBottom variant="h5" component="div">
-                                            {product?.name}
-                                        </Typography>
-                                        <Typography gutterBottom variant="h6" component="div">
-                                            Price: ${product?.price}
-                                        </Typography>
-                                        <Typography variant="body2" color="text.secondary">
-                                            {product?.desc}
-                                        </Typography>
-                                    </CardContent>
-                                </CardActionArea>
-                            </Card>
+                                    <TextField
+                                        required
+                                        sx={{ width: '75%', mt: 3 }}
+                                        id="outlined-required"
+                                        label="Email"
+                                        name="email"
+                                        type="email"
+                                        defaultValue={user.email}
+                                        onBlur={handleOnBlur}
+                                    />
+                                    <TextField
+                                        required
+                                        sx={{ width: '75%', mt: 3 }}
+                                        id="outlined-required"
+                                        label="Address"
+                                        name="address"
+                                        onBlur={handleOnBlur}
+                                    />
+                                    <TextField
+                                        required
+                                        sx={{ width: '75%', mt: 3 }}
+                                        id="outlined-required"
+                                        label="Phone Number"
+                                        name="phone"
+                                        onBlur={handleOnBlur}
+                                    />
+                                    <Button sx={{ width: "25%", m: 1, mt: 2, backgroundColor: '#1ED0C1' }} type="submit" variant="contained">Place Order</Button>
+                                </form>
+                            </Container>
                         </Grid>
                     </Grid>
-                    <Grid item xs={4} md={6}>
-                        <Container>
-                            <form onSubmit={handlePurchaseSubmit}>
-                                <TextField
-                                    required
-                                    sx={{ width: '75%', mt: 3 }}
-                                    id="outlined-required"
-                                    label="Name"
-                                    name="displayName"
-                                    defaultValue={user?.displayName}
-                                    onBlur={handleOnBlur}
-                                />
-                                <TextField
-                                    required
-                                    sx={{ width: '75%', mt: 3 }}
-                                    id="outlined-required"
-                                    label="Email"
-                                    name="email"
-                                    type="email"
-                                    defaultValue={user.email}
-                                    onBlur={handleOnBlur}
-                                />
-                                <TextField
-                                    required
-                                    sx={{ width: '75%', mt: 3 }}
-                                    id="outlined-required"
-                                    label="Address"
-                                    name="address"
-                                    onBlur={handleOnBlur}
-                                />
-                                <TextField
-                                    required
-                                    sx={{ width: '75%', mt: 3 }}
-                                    id="outlined-required"
-                                    label="Phone Number"
-                                    name="phone"
-                                    onBlur={handleOnBlur}
-                                />
-                                <Button sx={{ width: "25%", m: 1, mt: 2, backgroundColor: '#1ED0C1' }} type="submit" variant="contained">Place Order</Button>
-                            </form>
-                        </Container>
-                    </Grid>
-                </Grid>
-            </Box>
-        </Container>
+                </Box>
+            </Container>
+        </div>
     );
 };
 
